@@ -15,7 +15,7 @@ class TestLinkedList(unittest.TestCase):
         self.assertEqual(dl.tail.value, 1)
 
         dl.add_node(Node(2))
-        self.assertEqual(dl.to_list(), [0, 1, 2])
+        self.assertEqual(list(dl), [0, 1, 2])
 
     def test_annihilate(self):
         dl = DLinkedList(Node(0))
@@ -25,7 +25,14 @@ class TestLinkedList(unittest.TestCase):
         e4 = dl.head.next.next
         dl.annihilate_with_next(e4)
 
-        self.assertEqual(dl.to_list(), [0, 1, 4])
+        self.assertEqual(list(dl), [0, 1, 4])
+
+    def test_sum(self):
+        dl = DLinkedList(Node(0))
+        for i in range(1, 5):
+            dl.add_node(Node(i))
+
+        self.assertEquals(sum(dl), 10)
 
 if __name__ == '__main__':
     unittest.main()
