@@ -21,6 +21,12 @@ class Node:
         self.next = _next
         self.prev = _prev
 
+    def __repr__(self):
+        return str(self.value)
+
+    def __str__(self):
+        return str(self.value)
+
     def check_destroy_next(self):
         if self.next is not None:
             return self.value + self.next.value == 0
@@ -29,6 +35,12 @@ class DLinkedList:
     def __init__(self, head=None):
         self.head = head
         self.tail = head
+
+    def __repr__(self):
+        return str(self.to_list())
+
+    def __str__(self):
+        return str(self.to_list())
 
     def link_node(self, before, after):
         before.next = after
@@ -52,13 +64,16 @@ class DLinkedList:
         else:
             raise AnnihilationError('Tried to annihilate end of list')
 
+    def to_list(self):
+        l = []
+        node = self.head
+        while node is not None:
+            l.append(node.value)
+            node = node.next
+        return l
 
     def print_list(self):
-        node = self.head
-        l = []
-        while node is not None:
-            l.append(str(node.value))
-            node = node.next
+        l = self.to_list()
         print(', '.join(l))
 
 
@@ -81,14 +96,14 @@ class DLinkedList:
         return count
 
 
-# make these into unit tests
-l = DLinkedList(Node(0))
-l.print_list()
-l.add_node(Node(1))
-l.print_list()
-l.add_node(Node(2))
-l.print_list()
-l.print_list_backwards()
+# # make these into unit tests
+# l = DLinkedList(Node(0))
+# l.print_list()
+# l.add_node(Node(1))
+# l.print_list()
+# l.add_node(Node(2))
+# l.print_list()
+# l.print_list_backwards()
 
 
 # get letter translate dict
