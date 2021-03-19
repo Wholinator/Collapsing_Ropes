@@ -60,7 +60,6 @@ class DLinkedList:
 
         self.tail = node
 
-
     def annihilate_with_next(self, node):
         if node.next:
             if node.prev:

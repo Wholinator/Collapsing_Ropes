@@ -27,12 +27,6 @@ class TestLinkedList(unittest.TestCase):
 
         self.assertEqual(list(dl), [0, 1, 4])
 
-    def test_sum(self):
-        dl = DLinkedList(Node(0))
-        for i in range(1, 5):
-            dl.add_node(Node(i))
-
-        self.assertEquals(sum(dl), 10)
 
 if __name__ == '__main__':
     unittest.main()
