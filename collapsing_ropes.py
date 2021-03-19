@@ -104,11 +104,12 @@ class DLinkedList:
 
 
 
-
-# make these into unit tests
-dl = DLinkedList(Node(0))
-dl.add_node(Node(1))
-dl.add_node(Node(2))
+### general algorithm
+# create list (recursive?), must sum to 0, must not collapse
+# a testable list has an equal number of letters and antiletters for each letter in it
+# a testable list does not collapse at all (no letter-antiletter pairs to start)
+# a testable list contains at least one letter-antiletter pair for each letter used (min length n*2)
+# 
 
 
 
